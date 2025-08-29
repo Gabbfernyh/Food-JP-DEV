@@ -6,7 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 
-    <link rel="stylesheet" href="/src/css/style.css">
+    <link rel="stylesheet" href="src/css/style.css">
+    <link rel="stylesheet" href="src/css/response.css">
 </head>
 
 <body>
@@ -30,7 +31,7 @@
         </nav> -->
     </header>
     <main>
-        <section class="hero">
+        <section class="hero" id="home">
             <div class="hero-text">
                 <h2 class="title-hero">Comida Oriental</h2>
                 <p class="text-hero">A culinária Japonesa é bastante equilibrada, sendo muito rica em peixes (ômega 3),
@@ -44,7 +45,7 @@
             </div>
         </section>
 
-        <section class="about-container">
+        <section class="about-container" id="about">
             <div class="about-img">
                 <img src="/src/assets/imgs/image.png" alt="Comida Oriental" class="img-about">
             </div>
@@ -58,35 +59,40 @@
                     preparação delicada do sushi, cada etapa é uma reverência à herança culinária do Japão.</p>
             </div>
         </section>
-        <section class="Populares">
-            <h2 class="titles">Populares</h2>
-            <div class="popular-item">
-                <img src="/src/assets/imgs/3.png" alt="Comida Popular">
-                <h3>Ramen de frango</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                <h2 class="valor">R$ 30</h2>
+        <h2 class="titles">Populares</h2>
+        <section class="Populares" id="services">
+            <div class="card">
+                <div class="card-image-container">
+                    <img src="/src/assets/imgs/2.png" alt="Ramen de frango" class="card-image">
+                </div>
+                <h3 class="card-title">Ramen de frango</h3>
+                <p class="card-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                <p class="card-price">R$ 30</p>
             </div>
-            <div class="popular-item">
-                <img src="/src/assets/imgs/4.png" alt="Comida Popular">
-                <h3>Prato Popular 2</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                <h2 class="valor">R$ 30</h2>
+            <div class="card">
+                <div class="card-image-container">
+                    <img src="/src/assets/imgs/2.png" alt="Ramen de frango" class="card-image">
+                </div>
+                <h3 class="card-title">Ramen de frango</h3>
+                <p class="card-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                <p class="card-price">R$ 30</p>
             </div>
-            <div class="popular-item">
-                <img src="/src/assets/imgs/4.png" alt="Comida Popular">
-                <h3>Prato Popular 2</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                <br>
-                <h2 class="valor">R$ 30</h2>
+            <div class="card">
+                <div class="card-image-container">
+                    <img src="/src/assets/imgs/2.png" alt="Ramen de frango" class="card-image">
+                </div>
+                <h3 class="card-title">Ramen de frango</h3>
+                <p class="card-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                <p class="card-price">R$ 30</p>
             </div>
         </section>
-
+        <h2 class="titles">comentarios</h2>
         <section class="comentarios">
-            <h2 class="titles">comentarios</h2>
             <div class="comentario-item">
-                <img src="/src/assets/imgs/profile-1.png" alt="Usuário 1">
-                <h3></h3>
-                <p><strong>Usuário 1:</strong> Adorei a comida!</p>
+                <img src="/src/assets/imgs/profile-1.png" alt="Usuário 1" class="comentario-img2">
+                <h3 class="comentario-nome"><strong>Daniele Almeida</strong></h3>
+                <blockquote class="comentario">Ótimo serviço! Encantada<br>
+                    com a qualidade dos pratos.</blockquote>
                 <div class="stars">
                     <img src="/src/assets/imgs/star.svg" alt="Estrela cheia">
                     <img src="/src/assets/imgs/star.svg" alt="Estrela cheia">
@@ -97,9 +103,10 @@
             </div>
 
             <div class="comentario-item">
-                <img src="/src/assets/imgs/profile-2.png" alt="Usuário 2">
-                <h3></h3>
-                <p><strong>Usuário 2:</strong> O atendimento foi excelente!</p>
+                <img src="/src/assets/imgs/profile-2.png" alt="Usuário 2" class="comentario-img1">
+                <h3 class="comentario-nome"><strong>Ricardo França</strong></h3>
+                <blockquote class="comentario">Não é apenas a comida excelente,<br>
+                    o serviço torna a experiência especial.</blockquote>
                 <div class="stars">
                     <img src="/src/assets/imgs/star.svg" alt="Estrela cheia">
                     <img src="/src/assets/imgs/star.svg" alt="Estrela cheia">
@@ -111,8 +118,51 @@
         </section>
     </main>
 
-    <footer>
-        
+    <footer class="footer">
+        <div class="footer-content">
+            <!-- Coluna 1: Marca e descrição -->
+            <div class="footer-section footer-brand">
+                <a href="#home" class="footer-logo-link">
+                    <img src="/src/assets/imgs/logo.svg" alt="FOODJP Logo" class="footer-logo">
+                </a>
+                <p class="footer-description">A culinária Japonesa é bastante equilibrada, sendo muito rica em peixes,
+                    vegetais e ingredientes frescos.</p>
+            </div>
+
+            <!-- Coluna 2: Links de Navegação -->
+            <nav class="footer-section footer-nav">
+                <h3>Navegação</h3>
+                <ul>
+                    <li><a href="#home">Inicio</a></li>
+                    <li><a href="#about">Sobre</a></li>
+                    <li><a href="#services">Populares</a></li>
+                </ul>
+            </nav>
+
+            <!-- Coluna 3: Contato (usando <address> para semântica) -->
+            <address class="footer-section footer-contact">
+                <h3>Contato</h3>
+                <ul>
+                    <li><a href="#">Fale Conosco</a></li>
+                    <li><a href="#">Localização</a></li>
+                    <li><a href="#">FAQ</a></li>
+                </ul>
+            </address>
+
+            <!-- Coluna 4: Redes Sociais (usando <section>) -->
+            <section class="footer-section footer-social">
+                <h3>Redes Sociais</h3>
+                <div class="social-icons">
+                    <a href="#" aria-label="Facebook"><img src="/src/assets/imgs/facebook.svg" alt="Facebook"></a>
+                    <a href="#" aria-label="Instagram"><img src="/src/assets/imgs/instagram.svg" alt="Instagram"></a>
+                    <a href="#" aria-label="Twitter"><img src="/src/assets/imgs/twitter.svg" alt="Twitter"></a>
+                </div>
+            </section>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2024 FoodJP. Todos os direitos reservados.</p>
+        </div>
     </footer>
 </body>
 

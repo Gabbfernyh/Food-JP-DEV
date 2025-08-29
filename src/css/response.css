@@ -1,0 +1,30 @@
+/* ==== FOOTER RESPONSIVE ==== */
+
+/* Para tablets e celulares (telas com largura máxima de 768px) */
+@media screen and (max-width: 768px) {
+    .footer-content {
+        flex-direction: column;
+        /* Empilha as colunas verticalmente */
+        text-align: center;
+        /* Centraliza o texto dentro das colunas */
+    }
+
+    /* Garante que o conteúdo de cada coluna também seja centralizado */
+    .footer-contacts,
+    .footer-links,
+    .footer-subscribe {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .social-media {
+        justify-content: center;
+        /* Centraliza os ícones de redes sociais */
+    }
+
+    .input-group {
+        width: 100%;
+        /* Faz o input ocupar mais espaço na tela */
+    }
+}

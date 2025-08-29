@@ -7,7 +7,7 @@
 
   --white: #ffffff;
 
-  --font-principal:
+  --gray: #525252;
 }
 
 * {
@@ -35,7 +35,7 @@ header {
   align-items: center;
   padding: 10px 10px;
   /* Define uma altura consistente para o cabeçalho */
-  box-shadow: 0 2px 4px var(--brand-color);
+  box-shadow: 0 1px 1px var(--gray);
 }
 
 header img {
@@ -54,7 +54,23 @@ header nav a {
   font-weight: 400;
   font-size: 1.2rem;
   color: #333;
-  /* Adiciona uma cor padrão para os links */
+  position: relative; /* Necessário para o pseudo-elemento ::after */
+  padding-bottom: 5px; /* Espaço para a linha não sobrepor o texto */
+  transition: color 0.3s ease-out;
+}
+
+/* Efeito de linha para os links da navbar */
+header nav a::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: var(--brand-color);
+  transform: scaleX(0); /* Começa com largura 0 */
+  transform-origin: bottom right;
+  transition: transform 0.3s ease-out;
 }
 
 a {
@@ -68,6 +84,11 @@ a {
 
 .desktop-nav a:hover {
   color: var(--brand-color);
+}
+
+.desktop-nav a:hover::after {
+  transform: scaleX(1); /* Expande a linha para 100% da largura */
+  transform-origin: bottom left;
 }
 
 .titles {
@@ -89,39 +110,37 @@ a {
   cursor: pointer;
   width: 200px;
   height: 49px;
-  opacity: 1;
-  top: 32px;
-  left: 1361px;
   border-radius: 60px;
-  gap: 10px;
-
+  position: relative; /* Para posicionar a linha */
+  overflow: hidden; /* Para conter a animação da linha */
+  transition: color 0.4s ease, background-color 0.4s ease;
 }
 
 .btn1:hover {
-  background-color: darken(var(--brand-color));
+  background-color: var(--white); /* Fundo branco ao passar o mouse */
   color: var(--brand-color);
-  border: 0.1px solid var(--brand-color);
+  border: 1px solid var(--brand-color);
 }
 
 .btn-menu {
   background-color: var(--brand-color);
   color: var(--white);
-  border: 0.1px solid var(--brand-color);
-  gap: 10px;
-  font-weight: 400px;
+  font-weight: 400; /* Corrigido: sem 'px' */
   font-size: 1.1rem;
   padding: 12px;
   border-radius: 60px;
   border: none;
   cursor: pointer;
-  opacity: 1;
+  position: relative; /* Para posicionar a linha */
+  overflow: hidden; /* Para conter a animação da linha */
+  transition: color 0.4s ease, background-color 0.4s ease;
 }
 
 .btn-menu:hover {
-  background-color: darken(var(--brand-color));
+  background-color: var(--white); /* Fundo branco ao passar o mouse */
   color: var(--brand-color);
-  border: 0.1px solid var(--brand-color);
-  font-size: 19px;
+  border: 1px solid var(--brand-color);
+  transition: all 0.4s ease;
 }
 
 .titles {
@@ -166,6 +185,32 @@ a {
 
 }
 
+.comentario-img2 {
+  width: 100px;
+  height: 100px;
+  top: 2378px;
+  left: 392px;
+  opacity: 1;
+  border-radius: 16px;
+  padding-bottom: 10px;
+}
+
+.comentario-img1 {
+  width: 100px;
+  height: 100px;
+  top: 2364px;
+  left: 1003px;
+  opacity: 1;
+  border-radius: 16px;
+  padding-bottom: 10px;
+}
+
+.stars img {
+  width: 22px;
+  height: 22px;
+  margin: 1px;
+}
+
 /* SEÇÃO HERO */
 
 .hero {
@@ -183,8 +228,8 @@ a {
 }
 
 .title-hero {
-  font-family: poppins;
-  font-weight: 400;
+  font-family: "Koh Santepheap";
+  font-weight: 410;
   font-style: Regular;
   font-size: 40px;
   line-height: 120%;
@@ -194,7 +239,7 @@ a {
 
 .text-hero {
   font-family: "poppins";
-  font-weight: 350;
+  font-weight: 39;
   font-style: Regular;
   font-size: 24px;
   line-height: 160%;
@@ -210,7 +255,7 @@ a {
   align-items: center;
   padding-top: 10vh;
   padding-bottom: 10vh;
-  
+
 }
 
 .about-indicator {
@@ -231,7 +276,7 @@ a {
 
 .about-text {
   font-family: "poppins";
-  font-weight: 355;
+  font-weight: 49;
   font-style: Regular;
   font-size: 20px;
   line-height: 160%;
@@ -248,4 +293,246 @@ a {
   padding: 100px 100px 0;
   gap: 10px;
   margin: 0 50px;
+}
+
+/* SEÇÃO POPULARES */
+
+.Populares {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  padding: 100px 50px;
+}
+
+/* Container principal para alinhar os cards (opcional, se você já tiver um grid) */
+.cards-container {
+  display: flex;
+  /* ou grid */
+  justify-content: center;
+  gap: 30px;
+  /* Espaçamento entre os cards */
+  padding: 20px;
+}
+
+/* Estilo geral do card */
+.card {
+  width: 350px;
+  /* Largura do card, se quiser manter */
+  background-color: var(--paper);
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  text-align: center;
+
+  /* Aumente o padding-bottom para criar mais espaço na parte de baixo do card */
+  padding-bottom: 40px;
+  padding-top: 45px;
+  position: relative;
+  overflow: visible;
+}
+
+.card:hover {
+  cursor: pointer;
+  transform: scale(1.05);
+  transition: transform 0.9s ease;
+  box-shadow: 0 2px 10px var(--brand-color);
+
+}
+
+/* Container da imagem */
+.card-image-container {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin: -90px auto 30px auto;
+  /* Aumente a margem inferior aqui para afastar a imagem do título */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Título do card */
+.card-title {
+  font-size: 22px;
+  color: #232323;
+
+  /* Aumente o espaçamento acima e abaixo do título */
+  margin-top: 20px;
+  margin-bottom: 15px;
+}
+
+/* Descrição do card */
+.card-description {
+  font-size: 14px;
+  color: #000;
+  font-weight: 355;
+  /* Aumente o espaçamento abaixo da descrição */
+  margin-bottom: 30px;
+  font-family: "Poppins";
+
+}
+
+/* Preço do card */
+.card-price {
+  font-family: "Koh Santepheap";
+  /* Use a fonte do seu projeto */
+  font-size: 30px;
+  color: var(--brand-color);
+  /* Cor avermelhada do preço */
+  font-weight: 505;
+}
+
+/* SEÇÃO COMENTARIOS */
+
+.comentarios {
+  display: flex;
+  justify-items: center;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  padding: 100px 50px;
+}
+
+
+.comentario-item {
+  background-color: var(--paper);
+  padding: 20px 150px 10px 25px;
+  border-radius: 15px;
+  margin: 0 20px;
+}
+
+.comentario-nome {
+  font-family: Koh Santepheap;
+  font-weight: 380;
+  font-size: 30px;
+  line-height: 120%;
+  letter-spacing: 0%;
+
+}
+
+.comentario {
+  font-family: Poppins;
+  font-style: Regular;
+  line-height: 160%;
+  letter-spacing: 0%;
+
+}
+
+.stars {
+  display: flex;
+  margin: 5px;
+  align-items: center;
+  justify-items: center;
+}
+
+
+
+/* ==== FOOTER ==== */
+.footer {
+  width: 100%;
+  background-color: #161616d0; /* Um fundo escuro e elegante para melhor contraste */
+  color: var(--white);
+  padding: 80px 0 20px; /* Mais espaço no topo para um visual premium */
+  margin-top: 100px; /* Garante uma boa separação do conteúdo acima */
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 40px; /* Espaço consistente entre as colunas */
+  margin-bottom: 60px;
+}
+
+.footer-section {
+  flex: 1;
+  min-width: 220px; /* Garante que as colunas quebrem corretamente */
+}
+
+/* Seção da Marca */
+.footer-brand .footer-logo {
+  max-width: 140px;
+  margin-bottom: 20px;
+}
+
+.footer-description {
+  color: #a7a7a7;
+  line-height: 1.7;
+  font-size: 0.95rem;
+  max-width: 300px; /* Melhora a legibilidade */
+}
+
+/* Títulos das seções */
+.footer-section h3 {
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-bottom: 25px;
+  color: var(--white);
+  font-family: 'Poppins', sans-serif; /* Fonte consistente e moderna */
+}
+
+/* Listas de links */
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-section li {
+  margin-bottom: 12px;
+}
+
+.footer-section a {
+  color: #a7a7a7;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-section a:hover {
+  color: var(--brand-color); /* Efeito de hover simples e eficaz */
+}
+
+/* Reset para a tag <address> */
+.footer-contact {
+  font-style: normal;
+}
+
+/* Ícones de Redes Sociais */
+.social-icons {
+  display: flex;
+  gap: 20px;
+}
+
+.social-icons a {
+  display: inline-block;
+}
+
+.social-icons img {
+  width: 32px; /* Ícones com tamanho mais refinado */
+  height: 32px;
+  /* MÁGICA: Inverte a cor do SVG de preto para branco para ser visível */
+  filter: brightness(0) invert(1);
+  opacity: 0.7; /* Deixa o ícone um pouco mais sutil */
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.social-icons a:hover img {
+  opacity: 1; /* Opacidade total no hover */
+  transform: translateY(-3px); /* Efeito de levantar o ícone */
+}
+
+/* Rodapé inferior (Copyright) */
+.footer-bottom {
+  text-align: center;
+  padding-top: 30px;
+  margin-top: 40px;
+  border-top: 1px solid #3a3a3a; /* Cor de borda mais suave */
+  color: #888;
+  font-size: 0.9rem;
 }
