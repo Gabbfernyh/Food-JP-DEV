@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Food JP</title>
 
     <link rel="stylesheet" href="src/css/style.css">
     <link rel="stylesheet" href="src/css/response.css">
@@ -13,6 +13,12 @@
 <body>
     <header>
         <img src="/src/assets/imgs/logo.svg" alt="Logo" class="logo">
+        <!-- Botão do menu hambúrguer para mobile -->
+        <button class="hamburger-button" aria-label="Abrir menu" aria-expanded="false" aria-controls="mobile-nav">
+            <!-- Coloque aqui o caminho para sua imagem de hambúrguer -->
+            <img src="/src/assets/imgs/bars-solid-full.svg" alt="Menu">
+        </button>
+
         <nav class="desktop-nav navbar">
             <ul>
                 <li><a href="#home">Inicio</a></li>
@@ -20,18 +26,23 @@
                 <li><a href="#services">Populares</a></li>
             </ul>
         </nav>
+
         <a href="" class="btn btn1">Baixar o App</a>
-        <!-- <nav class="mobile-nav navbar">
+
+        <nav class="mobile-nav navbar" id="mobile-nav">
             <ul>
                 <li><a href="#home">Inicio</a></li>
                 <li><a href="#about">Sobre</a></li>
                 <li><a href="#services">Populares</a></li>
             </ul>
             <a href="" class="btn btn1">Baixar o App</a>
-        </nav> -->
+        </nav>
     </header>
     <main>
         <section class="hero" id="home">
+            <div class="mobile-footer-bottom">
+                <img src="/src/assets/imgs/1.png" alt="Comida Oriental" class="img-hero">
+            </div>
             <div class="hero-text">
                 <h2 class="title-hero">Comida Oriental</h2>
                 <p class="text-hero">A culinária Japonesa é bastante equilibrada, sendo muito rica em peixes (ômega 3),
@@ -40,9 +51,9 @@
                     <a href="" class="btn-menu">Ver Cardápio</a>
                 </div>
             </div>
-            <div>
+            <div class="desktop-footer">
                 <img src="/src/assets/imgs/1.png" alt="Comida Oriental" class="img-hero">
-            </div>
+                </di>
         </section>
 
         <section class="about-container" id="about">
@@ -59,8 +70,8 @@
                     preparação delicada do sushi, cada etapa é uma reverência à herança culinária do Japão.</p>
             </div>
         </section>
-        <h2 class="titles">Populares</h2>
-        <section class="Populares" id="services">
+        <h2 class="titles" id="services">Populares</h2>
+        <section class="Populares">
             <div class="card">
                 <div class="card-image-container">
                     <img src="/src/assets/imgs/2.png" alt="Ramen de frango" class="card-image">
@@ -71,29 +82,31 @@
             </div>
             <div class="card">
                 <div class="card-image-container">
-                    <img src="/src/assets/imgs/2.png" alt="Ramen de frango" class="card-image">
+                    <img src="/src/assets/imgs/3.png" alt="Ramen apimentado" class="card-image">
                 </div>
-                <h3 class="card-title">Ramen de frango</h3>
+                <h3 class="card-title">Ramen apimentado</h3>
                 <p class="card-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
                 <p class="card-price">R$ 30</p>
             </div>
             <div class="card">
                 <div class="card-image-container">
-                    <img src="/src/assets/imgs/2.png" alt="Ramen de frango" class="card-image">
+                    <img src="/src/assets/imgs/4.png" alt="Ramen tradicional" class="card-image">
                 </div>
-                <h3 class="card-title">Ramen de frango</h3>
+                <h3 class="card-title">Ramen tradicional</h3>
                 <p class="card-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
                 <p class="card-price">R$ 30</p>
             </div>
+
         </section>
+
         <h2 class="titles">comentarios</h2>
-        <section class="comentarios">
-            <div class="comentario-item">
-                <img src="/src/assets/imgs/profile-1.png" alt="Usuário 1" class="comentario-img2">
-                <h3 class="comentario-nome"><strong>Daniele Almeida</strong></h3>
-                <blockquote class="comentario">Ótimo serviço! Encantada<br>
-                    com a qualidade dos pratos.</blockquote>
-                <div class="stars">
+        <section class="comentarios container-reviews">
+            <div class="comentario-item card-coment">
+                <img src="/src/assets/imgs/profile-1.png" alt="Usuário 1" class="comentario-img1 profile-img">
+                <h3 class="comentario-nome profile-name"><strong>Daniele Almeida</strong></h3>
+                <p class="comentario review-text">Ótimo serviço! Encantada<br>
+                    com a qualidade dos pratos.</p>
+                <div class="stars rating">
                     <img src="/src/assets/imgs/star.svg" alt="Estrela cheia">
                     <img src="/src/assets/imgs/star.svg" alt="Estrela cheia">
                     <img src="/src/assets/imgs/star.svg" alt="Estrela cheia">
@@ -102,12 +115,13 @@
                 </div>
             </div>
 
-            <div class="comentario-item">
-                <img src="/src/assets/imgs/profile-2.png" alt="Usuário 2" class="comentario-img1">
-                <h3 class="comentario-nome"><strong>Ricardo França</strong></h3>
-                <blockquote class="comentario">Não é apenas a comida excelente,<br>
-                    o serviço torna a experiência especial.</blockquote>
-                <div class="stars">
+            <div class="comentario-item card-coment">
+                <img src="/src/assets/imgs/profile-2.png" alt="Usuário 2" class="comentario-img1 profile-img">
+                <h3 class="comentario-nome profile-name"><strong>Ricardo França</strong></h3>
+                <p class="comentario review-text">Não é apenas a comida excelente,<br>
+                    o serviço torna a experiência especial.
+                </p>
+                <div class="stars rating">
                     <img src="/src/assets/imgs/star.svg" alt="Estrela cheia">
                     <img src="/src/assets/imgs/star.svg" alt="Estrela cheia">
                     <img src="/src/assets/imgs/star.svg" alt="Estrela cheia">
@@ -121,49 +135,85 @@
     <footer class="footer">
         <div class="footer-content">
             <!-- Coluna 1: Marca e descrição -->
-            <div class="footer-section footer-brand">
-                <a href="#home" class="footer-logo-link">
-                    <img src="/src/assets/imgs/logo.svg" alt="FOODJP Logo" class="footer-logo">
-                </a>
+            <div class="footer-section footer-brand mobile-footer-bottom">
+
+                <img src="/src/assets/imgs/logo.svg" alt="FOODJP Logo" class="footer-logo">
+
                 <p class="footer-description">A culinária Japonesa é bastante equilibrada, sendo muito rica em peixes,
                     vegetais e ingredientes frescos.</p>
             </div>
 
+            <!-- Coluna 1: Links de produtos -->
+
+            <nav class="footer-section footer-nav">
+                <h3>Produtos</h3>
+                <ul>
+                    <li><a href="#home">Todos</a></li>
+                    <li><a href="#about">Sushi</a></li>
+                    <li><a href="#services">Premium</a></li>
+                </ul>
+            </nav>
+
+            <!-- Coluna 2: Links de informação -->
+
+            <nav class="footer-section footer-nav">
+                <h3>Informações</h3>
+                <ul>
+                    <li><a href="#home">FAQ</a></li>
+                    <li><a href="#about">Blog</a></li>
+                    <li><a href="#services">Suporte</a></li>
+                </ul>
+            </nav>
+
             <!-- Coluna 2: Links de Navegação -->
             <nav class="footer-section footer-nav">
-                <h3>Navegação</h3>
+                <h3>Empresa</h3>
                 <ul>
-                    <li><a href="#home">Inicio</a></li>
-                    <li><a href="#about">Sobre</a></li>
-                    <li><a href="#services">Populares</a></li>
+                    <li><a href="#about">Sobre Nós</a></li>
+                    <li><a href="#home">Local</a></li>
+                    <li><a href="#services">Contato</a></li>
                 </ul>
             </nav>
 
             <!-- Coluna 3: Contato (usando <address> para semântica) -->
             <address class="footer-section footer-contact">
-                <h3>Contato</h3>
-                <ul>
-                    <li><a href="#">Fale Conosco</a></li>
-                    <li><a href="#">Localização</a></li>
-                    <li><a href="#">FAQ</a></li>
-                </ul>
+                <h3>Social</h3>
+                <a>
+                    <li><a href="#">Facebook</a></li>
+                    <li><a href="#">Instagram</a></li>
+                    <li><a href="#">Twitter</a></li>
+                    <!-- Coluna 4: Redes Sociais (usando <section>) -->
+                    <section class="footer-section footer-social mobile-footer-bottom">
+                        <h3>Redes Sociais</h3>
+                        <div class="social-icons">
+                            <a href="#" aria-label="Facebook" title="Facebook"><img src="/src/assets/imgs/facebook.svg"
+                                    alt="Facebook"></a>
+                            <a href="#" aria-label="Instagram" title="Instagram"><img
+                                    src="/src/assets/imgs/instagram.svg" alt="Instagram"></a>
+                            <a href="#" aria-label="Twitter" title="Twitter"><img src="/src/assets/imgs/twitter.svg"
+                                    alt="Twitter"></a>
+                        </div>
+                    </section>
             </address>
-
-            <!-- Coluna 4: Redes Sociais (usando <section>) -->
-            <section class="footer-section footer-social">
-                <h3>Redes Sociais</h3>
-                <div class="social-icons">
-                    <a href="#" aria-label="Facebook"><img src="/src/assets/imgs/facebook.svg" alt="Facebook"></a>
-                    <a href="#" aria-label="Instagram"><img src="/src/assets/imgs/instagram.svg" alt="Instagram"></a>
-                    <a href="#" aria-label="Twitter"><img src="/src/assets/imgs/twitter.svg" alt="Twitter"></a>
-                </div>
-            </section>
         </div>
 
-        <div class="footer-bottom">
-            <p>&copy; 2024 FoodJP. Todos os direitos reservados.</p>
+        <div class="footer-bottom desktop-footer">
+
+            <img src="/src/assets/imgs/logo.svg" alt="FOODJP Logo" class="footer-logo">
+
+            <div class="social-icons desktop-footer-links">
+                <a href="#" aria-label="Facebook"><img src="/src/assets/imgs/facebook.svg" alt="Facebook"></a>
+                <a href="#" aria-label="Instagram"><img src="/src/assets/imgs/instagram.svg" alt="Instagram"></a>
+                <a href="#" aria-label="Twitter"><img src="/src/assets/imgs/twitter.svg" alt="Twitter"></a>
+            </div>
+
+            <div class="footer-bottom mobile-footer-bottom">
+                <p>&copy; 2024 FoodJP. Todos os direitos reservados.</p>
+            </div>
         </div>
     </footer>
+
+    <script src="/src/js/response.js" defer></script>
 </body>
 
 </html>

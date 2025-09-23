@@ -1,30 +1,327 @@
-/* ==== FOOTER RESPONSIVE ==== */
+/*
+  =================================================================
+  ARQUIVO DE RESPONSIVIDADE - FoodJP
+  =================================================================
+  Abordagem: Desktop First.
+  - Breakpoint 1 (Tablets): max-width: 1024px
+  - Breakpoint 2 (Mobiles): max-width: 768px
+*/
 
-/* Para tablets e celulares (telas com largura máxima de 768px) */
-@media screen and (max-width: 768px) {
-    .footer-content {
-        flex-direction: column;
-        /* Empilha as colunas verticalmente */
-        text-align: center;
-        /* Centraliza o texto dentro das colunas */
+:root {
+    --brand-color: #ff0000;
+    --paper: #f8f5f2;
+    --white: #ffffff;
+    --gray: #525252;
+    --gray-footer: #161616d0;
+}
+
+/* ================================================================
+   Estilos Padrão (Desktop)
+   ================================================================ */
+
+/* Oculta o botão do menu hambúrguer e a navegação móvel em telas de desktop */
+.hamburger-button,
+.mobile-nav {
+    display: none !important;
+}
+
+
+/* ================================================================
+   Breakpoint 1: Tablets e Telas Menores (<= 1024px)
+   ================================================================ */
+@media screen and (max-width: 1024px) {
+
+    /* HEADER */
+    header {
+        padding: 16px 5vw;
     }
 
-    /* Garante que o conteúdo de cada coluna também seja centralizado */
-    .footer-contacts,
-    .footer-links,
-    .footer-subscribe {
+    .logo {
+        width: 110px !important;
+        margin-right: 0;
+    }
+
+    /* Esconde a navegação de desktop e o botão principal */
+    .desktop-nav,
+    .btn1 {
+        display: none !important;
+    }
+
+    /* Exibe o botão do menu hambúrguer */
+    .hamburger-button {
+        display: flex !important;
+        background: none !important;
+        border: none !important;
+        box-shadow: none !important;
+        padding: 0 !important;
+        margin-left: 12px;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .hamburger-button img {
+        width: 38px;
+        height: 38px;
+        display: block;
+        filter: none;
+    }
+
+    /* Estiliza a navegação móvel quando aberta */
+    .mobile-nav.is-open {
+        display: flex !important;
+        flex-direction: column;
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 320px;
+        max-width: 90vw;
+        height: 100vh;
+        background: rgba(20, 20, 20, 0.98);
+        z-index: 9999;
+        align-items: flex-start;
+        justify-content: flex-start;
+        gap: 2.5rem;
+        padding: 60px 32px 32px 32px;
+        box-shadow: -2px 0 16px rgba(0, 0, 0, 0.12);
+        border-radius: 0 0 0 16px;
+    }
+
+    .mobile-nav ul {
+        flex-direction: column;
+        gap: 2.5rem;
+        text-align: left;
+        width: 100%;
+    }
+
+    .mobile-nav a {
+        font-size: 1.3rem;
+        color: var(--white);
+    }
+
+    .mobile-nav .btn {
+        margin-top: 2rem;
+        width: 100%;
+    }
+
+    /* Ajustes de Tipografia e Espaçamento */
+    .title-hero,
+    .about-title {
+        font-size: 36px;
+    }
+
+    .text-hero,
+    .about-text {
+        font-size: 18px;
+    }
+
+    /* HERO E SOBRE */
+    .hero,
+    .about-container {
+        flex-direction: column;
+        text-align: center;
+        gap: 3rem;
+        padding: 8vw 5vw;
+    }
+
+    .img-hero {
+        max-width: 360px;
+        width: 100%;
+        padding: 0;
+    }
+
+    .about-img img {
+        max-width: 360px;
+        width: 100%;
+        max-height: 260px;
+        height: auto; /* Permite que a altura se ajuste proporcionalmente */
+        padding: 0;
+    }
+
+    .hero-text,
+    .about-content {
+        padding: 0;
+        margin: 0 auto;
+        width: 100%;
+    }
+
+    /* POPULARES E COMENTÁRIOS - CARROSSEL */
+    .Populares,
+    .comentarios {
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        gap: 2rem;
+        padding: 2rem 5vw;
+    }
+
+    .card,
+    .comentario-item {
+        flex: 0 0 80vw;
+        max-width: 340px;
+        scroll-snap-align: center;
+        margin: 0;
+    }
+
+    /* FOOTER */
+    .footer {
+        background-color: var(--gray-footer);
+        color: var(--white);
+        padding: 80px 5vw 20px;
+        margin-top: 100px;
+    }
+
+    .footer-content {
+        flex-wrap: wrap;
+        gap: 3rem;
+        padding: 0;
+    }
+
+    .footer-section {
+        flex: 1 1 200px;
+        min-width: 200px;
+        max-width: 300px;
+    }
+
+    .mobile-footer-bottom {
+        display: block;
+    }
+
+    .desktop-footer {
+        display: none;
+    }
+
+    .footer-section h3 {
+        color: var(--white);
+    }
+
+    .footer-section a {
+        color: #a7a7a7;
+        text-decoration: none;
+        transition: color 0.3s ease;
+    }
+}
+
+/* ================================================================
+   Breakpoint 2: Celulares (<= 768px)
+   ================================================================ */
+@media screen and (max-width: 768px) {
+
+    /* HEADER */
+    header {
+        padding: 10px 5vw;
+    }
+
+    .logo {
+        width: 100px !important;
+    }
+
+    /* Tipografia */
+    .title-hero,
+    .about-title {
+        font-size: 28px;
+    }
+
+    .text-hero,
+    .about-text {
+        font-size: 16px;
+    }
+
+    /* HERO E SOBRE */
+    .hero,
+    .about-container {
+        padding: 10vw 5vw;
+        gap: 2rem;
+    }
+
+    .img-hero,
+    .about-img img {
+        max-width: 280px;
+    }
+
+    /* POPULARES E COMENTÁRIOS */
+    .Populares {
+        gap: 1.5rem;
+        padding: 1.5rem 5vw;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .comentarios {
+        gap: 1.9rem;
+        padding: 1.5rem 5vw;
+        flex-wrap: nowrap;
+        /* Garante que comentários continuem como carrossel */
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
         display: flex;
         flex-direction: column;
+    }
+
+    .card {
+        width: 85vw;
+        max-width: 320px;
+        padding: 1.5rem;
+    }
+
+    .comentario-item {
+        flex: 0 0 85vw;
+        /* Garante que o item do comentário ocupe o espaço no carrossel */
+        max-width: 320px;
+        padding: 1.5rem;
+        scroll-snap-align: center;
+    }
+
+    /* FOOTER */
+    .footer-content {
+        flex-direction: column;
         align-items: center;
+        /* Alinha itens ao centro */
+        text-align: center;
+        /* Alinha texto ao centro */
+        gap: 2.5rem;
     }
 
-    .social-media {
-        justify-content: center;
-        /* Centraliza os ícones de redes sociais */
+    .footer-section {
+        max-width: 100%;
+        min-width: unset;
     }
 
-    .input-group {
-        width: 100%;
-        /* Faz o input ocupar mais espaço na tela */
+    .footer-logo {
+        width: 100px !important;
     }
+
+    .footer-bottom {
+        font-size: 0.9rem;
+        padding: 0.7rem 0;
+    }
+
+    /* A regra duplicada de .comentarios foi removida e suas propriedades integradas acima */
+}
+
+/* ================================================================
+   Utilidades
+   ================================================================ */
+
+/* Esconde a barra de rolagem para o carrossel de comentários */
+.comentarios::-webkit-scrollbar {
+    display: none;
+}
+
+/* Garante que o header seja fixo e que o conteúdo principal não fique atrás dele */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background-color: rgba(255, 255, 255, 0.644);
+    backdrop-filter: blur(7px);
+    -webkit-backdrop-filter: blur(7px);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+    transition: background-color 0.3s ease;
+}
+
+main {
+    margin-top: 70px;
+    /* Ajustado para a altura do header */
 }
