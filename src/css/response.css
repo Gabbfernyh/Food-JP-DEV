@@ -19,10 +19,83 @@
    Estilos Padrão (Desktop)
    ================================================================ */
 
-/* Oculta o botão do menu hambúrguer e a navegação móvel em telas de desktop */
-.hamburger-button,
-.mobile-nav {
-    display: none !important;
+@media screen and (min-width: 1025px) {
+    .hamburger-button,
+    .mobile-menu,
+    .menu-backdrop {
+        display: none !important;
+    }
+}
+
+.mobile-menu {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 320px;
+    max-width: 90vw;
+    height: 100vh;
+    background: rgba(20, 20, 20, 0.98);
+    z-index: 10000;
+    padding: 60px 32px 32px 32px;
+}
+
+.mobile-menu.is-open {
+    display: flex;
+}
+
+.menu-backdrop {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 9998;
+}
+
+.mobile-menu.is-open + .menu-backdrop {
+    display: block;
+}
+
+.mobile-menu .close-button {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 2rem;
+    line-height: 1;
+    padding: 0;
+}
+
+.mobile-menu nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.mobile-menu nav a {
+    color: white;
+    font-size: 1.3rem;
+    text-decoration: none;
+}
+
+.mobile-menu .btn1 {
+    margin-top: 2rem;
+    width: 100%;
+    display: block;
+}
+
+.no-scroll {
+    overflow: hidden !important;
 }
 
 
@@ -43,7 +116,7 @@
 
     /* Esconde a navegação de desktop e o botão principal */
     .desktop-nav,
-    .btn1 {
+    header > .btn1 {
         display: none !important;
     }
 
@@ -64,43 +137,6 @@
         height: 38px;
         display: block;
         filter: none;
-    }
-
-    /* Estiliza a navegação móvel quando aberta */
-    .mobile-nav.is-open {
-        display: flex !important;
-        flex-direction: column;
-        position: fixed;
-        top: 0;
-        right: 0;
-        width: 320px;
-        max-width: 90vw;
-        height: 100vh;
-        background: rgba(20, 20, 20, 0.98);
-        z-index: 9999;
-        align-items: flex-start;
-        justify-content: flex-start;
-        gap: 2.5rem;
-        padding: 60px 32px 32px 32px;
-        box-shadow: -2px 0 16px rgba(0, 0, 0, 0.12);
-        border-radius: 0 0 0 16px;
-    }
-
-    .mobile-nav ul {
-        flex-direction: column;
-        gap: 2.5rem;
-        text-align: left;
-        width: 100%;
-    }
-
-    .mobile-nav a {
-        font-size: 1.3rem;
-        color: var(--white);
-    }
-
-    .mobile-nav .btn {
-        margin-top: 2rem;
-        width: 100%;
     }
 
     /* Ajustes de Tipografia e Espaçamento */
@@ -129,12 +165,21 @@
         padding: 0;
     }
 
+    .about-img {
+        padding: 0;
+        margin: 0 auto;
+        display: flex;
+        justify-content: center;
+    }
+
     .about-img img {
         max-width: 360px;
         width: 100%;
         max-height: 260px;
         height: auto; /* Permite que a altura se ajuste proporcionalmente */
         padding: 0;
+        margin: 0 auto;
+        display: block;
     }
 
     .hero-text,
@@ -144,8 +189,15 @@
         width: 100%;
     }
 
-    /* POPULARES E COMENTÁRIOS - CARROSSEL */
-    .Populares,
+    /* POPULARES */
+    .Populares {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 3rem;
+        padding: 2rem 5vw;
+        padding-top: 4rem;
+    }
+
     .comentarios {
         flex-wrap: nowrap;
         overflow-x: auto;
@@ -154,7 +206,17 @@
         padding: 2rem 5vw;
     }
 
-    .card,
+    .card {
+        flex: 0 1 300px;
+        max-width: 300px;
+        margin: 0;
+    }
+    
+    .card:hover {
+      transform: none;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    }
+
     .comentario-item {
         flex: 0 0 80vw;
         max-width: 340px;
@@ -171,15 +233,15 @@
     }
 
     .footer-content {
+        display: flex;
         flex-wrap: wrap;
-        gap: 3rem;
+        gap: 2rem;
         padding: 0;
+        justify-content: space-between;
     }
 
     .footer-section {
         flex: 1 1 200px;
-        min-width: 200px;
-        max-width: 300px;
     }
 
     .mobile-footer-bottom {
@@ -240,8 +302,9 @@
 
     /* POPULARES E COMENTÁRIOS */
     .Populares {
-        gap: 1.5rem;
+        gap: 3rem;
         padding: 1.5rem 5vw;
+        padding-top: 5rem;
         flex-wrap: wrap;
         justify-content: center;
     }
@@ -261,6 +324,12 @@
         width: 85vw;
         max-width: 320px;
         padding: 1.5rem;
+        margin-bottom: 2rem;
+    }
+
+    .card:hover {
+      transform: none;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
     }
 
     .comentario-item {

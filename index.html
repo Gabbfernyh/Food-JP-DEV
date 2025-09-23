@@ -14,8 +14,7 @@
     <header>
         <img src="/src/assets/imgs/logo.svg" alt="Logo" class="logo">
         <!-- Botão do menu hambúrguer para mobile -->
-        <button class="hamburger-button" aria-label="Abrir menu" aria-expanded="false" aria-controls="mobile-nav">
-            <!-- Coloque aqui o caminho para sua imagem de hambúrguer -->
+        <button class="hamburger-button" aria-label="Abrir menu" aria-expanded="false" aria-controls="mobile-menu">
             <img src="/src/assets/imgs/bars-solid-full.svg" alt="Menu">
         </button>
 
@@ -29,14 +28,17 @@
 
         <a href="" class="btn btn1">Baixar o App</a>
 
-        <nav class="mobile-nav navbar" id="mobile-nav">
-            <ul>
-                <li><a href="#home">Inicio</a></li>
-                <li><a href="#about">Sobre</a></li>
-                <li><a href="#services">Populares</a></li>
-            </ul>
+        <div id="mobile-menu" class="mobile-menu">
+            <button class="close-button" aria-label="Fechar menu">&times;</button>
+            <nav>
+                <ul>
+                    <li><a href="#home">Inicio</a></li>
+                    <li><a href="#about">Sobre</a></li>
+                    <li><a href="#services">Populares</a></li>
+                </ul>
+            </nav>
             <a href="" class="btn btn1">Baixar o App</a>
-        </nav>
+        </div>
     </header>
     <main>
         <section class="hero" id="home">
@@ -56,8 +58,12 @@
                 </di>
         </section>
 
+        <div class="about-img mobile-footer-bottom">
+            <img src="/src/assets/imgs/image.png" alt="Comida Oriental" class="img-about">
+        </div>
+
         <section class="about-container" id="about">
-            <div class="about-img">
+            <div class="about-img desktop-footer">
                 <img src="/src/assets/imgs/image.png" alt="Comida Oriental" class="img-about">
             </div>
             <div class="about-content">
