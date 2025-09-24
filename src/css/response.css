@@ -40,6 +40,7 @@
     background: rgba(20, 20, 20, 0.98);
     z-index: 10000;
     padding: 60px 32px 32px 32px;
+    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.2); /* Adiciona sombra para destaque */
 }
 
 .mobile-menu.is-open {
@@ -86,12 +87,15 @@
     color: white;
     font-size: 1.3rem;
     text-decoration: none;
+    padding: 10px 0; /* Adiciona padding vertical para facilitar o clique */
+    display: block; /* Garante que o padding seja aplicado em toda a área do link */
 }
 
 .mobile-menu .btn1 {
     margin-top: 2rem;
     width: 100%;
     display: block;
+    text-align: center; /* Centraliza o texto do botão */
 }
 
 .no-scroll {
