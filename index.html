@@ -8,6 +8,8 @@
 
     <link rel="stylesheet" href="src/css/style.css">
     <link rel="stylesheet" href="src/css/response.css">
+    <link rel="stylesheet" href="src/css/alert.css">
+
 </head>
 
 <body>
@@ -220,6 +222,12 @@
     </footer>
 
     <script src="/src/js/response.js" defer></script>
+    <script src="/src/js/alert.js" defer></script>
+    <script>
+        window.addEventListener('load', () => {
+            showWelcomeAlert('Bem-vindo à FOOD_JP! Aproveite nossa coleção exclusiva de pratos especiais. <br><span class="warning-text">Lembre-se de que este é um site fictício para fins educacionais e possível freelancing. Então interaja com tudo, para mais informações entre em contato.</span>');
+        });
+    </script>
 </body>
 
 </html>
