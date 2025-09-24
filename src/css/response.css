@@ -213,8 +213,8 @@
     }
     
     .card:hover {
-      transform: none;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+      transform: scale(1.02); /* Slightly enlarge on hover */
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1); /* More pronounced shadow */
     }
 
     .comentario-item {
@@ -328,8 +328,8 @@
     }
 
     .card:hover {
-      transform: none;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+      transform: scale(1.02); /* Slightly enlarge on hover */
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1); /* More pronounced shadow */
     }
 
     .comentario-item {
