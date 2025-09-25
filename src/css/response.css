@@ -80,7 +80,15 @@
     margin: 0;
     display: flex;
     flex-direction: column;
-    gap: 1.5rem;
+    gap: 0; /* Removido o gap para controle manual */
+}
+
+.mobile-menu nav ul li {
+    margin-bottom: 1rem; /* Espaçamento vertical entre os itens do menu */
+}
+
+.mobile-menu nav ul li:last-child {
+    margin-bottom: 0; /* Remove margin-bottom do último item */
 }
 
 .mobile-menu nav a {
@@ -92,7 +100,7 @@
 }
 
 .mobile-menu .btn1 {
-    margin-top: 1.5rem;
+    margin-top: 1rem; /* Reduzido o espaçamento superior do botão */
     width: 100%;
     display: block;
     text-align: center; /* Centraliza o texto do botão */
