@@ -55,9 +55,34 @@
 
 /* Estilo para texto de aviso/lembrete */
 .warning-text {
-    color: #ff0000; /* Vermelho */
+    color: #c94c4c; /* Vermelho mais escuro */
     font-weight: bold;
     text-transform: uppercase;
+}
+
+.first-access-alert-content p a {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: #333;
+    text-decoration: none;
+    font-size: 0.8em;
+    transition: color 0.3s ease;
+}
+
+.first-access-alert-content p a:hover {
+    color: #007bff;
+}
+
+.social-icon {
+    width: 24px;
+    height: 24px;
+    vertical-align: middle;
+    transition: transform 0.3s ease;
+}
+
+.first-access-alert-content p a:hover .social-icon {
+    transform: scale(1.1);
 }
 
 /* Media Queries para responsividade */
