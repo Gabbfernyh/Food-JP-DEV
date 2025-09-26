@@ -271,10 +271,10 @@ a {
 
 .text-hero {
   font-family: "poppins";
-  font-weight: 40;
+  font-weight: 300;
   font-size: 25px;
   line-height: 160%;
-  color: #000;
+  color: var(--text);
   padding-bottom: 15px;
 }
 
@@ -307,8 +307,8 @@ a {
 
 .about-text {
   font-family: "poppins";
-  font-weight: 50;
-  color: #000;
+  font-weight: 300;
+  color: var(--text);
   font-size: 21px;
   line-height: 160%;
   letter-spacing: 0%;
@@ -398,7 +398,7 @@ a {
 /* Descrição do card */
 .card-description {
   font-size: 14px;
-  color: #000;
+  color: var(--text);
   font-weight: 355;
   /* Aumente o espaçamento abaixo da descrição */
   margin-bottom: 30px;
